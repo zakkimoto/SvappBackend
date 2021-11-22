@@ -3,6 +3,7 @@ const controller = require('./controller');
 const router = Router();
 //router.get("/", () => controller.getUsers(req,res))
 router.get("/", controller.getUsers);
+router.get("/pending", controller.getPendingUsers)
 router.post("/", controller.addUser);
 router.get("/:id", controller.getUserById);
 router.get("/username/:id", controller.getUserName);

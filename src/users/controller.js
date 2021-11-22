@@ -11,6 +11,17 @@ const getUsers = (req, res) => {
         }
     })
 };
+
+const getPendingUsers = (req, res) => {
+    pool.query(queries.getPendingUsers,(error,results)=>{
+        if(!error){
+            res.status(200).json(results.rows);
+            console.log(results.rows);
+        }else{
+            console.log(error);
+        }
+    })
+};
 const putUserActive = (req, res) => {
     const id = parseInt(req.params.id);
     pool.query(queries.putUserActive,[id],(error,results)=>{
@@ -36,6 +47,7 @@ const putUserNotActive = (req, res) => {
 
 const putUserVerified = (req, res) => {
     const id = parseInt(req.params.id);
+    console.log("verifyrequest");
     pool.query(queries.putUserVerified,[id],(error,results)=>{
         if(!error){
             res.status(200).send("User now verified");
@@ -141,5 +153,5 @@ module.exports = {
     putUserVerified,
     putUserActive,
     putUserNotActive,
-
+    getPendingUsers,
 }
