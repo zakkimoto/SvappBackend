@@ -14,6 +14,7 @@ const putUserPendingVerified = 'UPDATE svapp_user SET verified = 0 WHERE svapp_u
 const putUserVerified = 'UPDATE svapp_user SET verified = 1 WHERE svapp_user_id = $1';
 const putUserNotActive = 'UPDATE svapp_user SET active = false WHERE svapp_user_id = $1';
 const putUserActive = 'UPDATE svapp_user SET active = true WHERE svapp_user_id = $1';
+const putUserPaid = 'UPDATE svapp_user SET paid = true WHERE svapp_user_id = $1'
 
 
 module.exports = {
@@ -29,4 +30,5 @@ module.exports = {
     putUserNotActive,
     putUserActive,
     getPendingUsers,
+    putUserPaid,
 }

@@ -13,6 +13,7 @@ router.put("/pendingverified/:id", controller.putUserPendingVerified);
 router.put("/verified/:id", controller.putUserVerified);
 router.put("/notactive/:id", controller.putUserNotActive);
 router.put("/active/:id", controller.putUserActive);
+router.put("/paid/:id", controller.putUserPaid);
 
 
 

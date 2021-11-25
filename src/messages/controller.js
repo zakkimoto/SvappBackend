@@ -37,10 +37,13 @@ const getMessageById = (req,res)=>{
 
 
 //TODO
-const putMessage = (req, res) => {
-    pool.query(queries.putMessage,[id],(error,results)=>{
+const patchMessage = (req, res) => {
+    const id = parseInt(req.params.id);
+    const answer = req.body.answer;
+    pool.query(queries.patchMessage,[id, answer],(error,results)=>{
         if(!error){
-            res.status(200)
+            res.status(200).json(results.rows);
+            console.log(results.rows);
         }else{
             console.log(error)
         }
@@ -54,7 +57,7 @@ const putMessage = (req, res) => {
 
 module.exports = {
     getMessages,
-    putMessage,
+    patchMessage,
     getMessageById,
     getActiveMessages
 }

@@ -140,6 +140,17 @@ const addUser = (req,res)=>{
 }
 
 
+const putUserPaid = (req, res) => {
+    const id = parseInt(req.params.id);
+    pool.query(queries.putUserPaid,[id],(error,results)=>{
+        if(!error){
+            res.status(200).send("User has Paid");
+            console.log("User has Paid");
+        }else{
+            console.log(error);
+        }
+    })
+};
 
 
 module.exports = {
@@ -154,4 +165,5 @@ module.exports = {
     putUserActive,
     putUserNotActive,
     getPendingUsers,
+    putUserPaid,
 }
