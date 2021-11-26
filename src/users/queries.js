@@ -17,6 +17,7 @@ const putUserActive = 'UPDATE svapp_user SET active = true WHERE svapp_user_id =
 const putUserPaid = 'UPDATE svapp_user SET paid = true WHERE svapp_user_id = $1'
 
 
+
 module.exports = {
     getUsers,
     getUserById,
