@@ -1,5 +1,5 @@
 const express = require('express');
-const cors=require("cors");
+const cors = require("cors");
 const userRoutes = require('./src/users/routes');
 const messageRoutes = require('./src/messages/routes');
 const propertyRoutes = require('./src/properties/routes');
@@ -12,6 +12,10 @@ const corsOptions ={
    optionSuccessStatus:200,
 }
 
+
+
+
+app.use(cors())
 app.use(cors(corsOptions))
 
 app.use(express.json());

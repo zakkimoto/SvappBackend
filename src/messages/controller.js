@@ -36,7 +36,6 @@ const getMessageById = (req,res)=>{
 };
 
 
-//TODO
 const patchMessage = (req, res) => {
     const id = parseInt(req.params.id);
     const answer = req.body.answer;

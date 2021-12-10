@@ -3,7 +3,6 @@ const queries = require('./queries');
 
 
 const getProperties = (req, res) => {
-    console.log("zakki")
     pool.query(queries.getProperties,(error,results)=>{
         if(!error){
             res.status(200).json(results.rows);
@@ -26,8 +25,21 @@ const getAdressById = (req,res)=>{
     })
 };
 
+const getPropertiesWithAddress = (req, res) => {
+    pool.query(queries.getPropertiesWithAddress,(error,results)=>{
+        if(!error){
+            res.status(200).json(results.rows);
+            console.log(results.rows);
+        }else{
+            console.log(error)
+        }
+    })
+};
+
 module.exports = {
     getProperties,
     getAdressById,
+    getPropertiesWithAddress,
+
     
 }
