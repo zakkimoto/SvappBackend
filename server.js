@@ -13,7 +13,7 @@ const corsOptions ={
 }
 
 
-
+//passa að hafa þetta cors inni annars virkar þetta ekki
 
 app.use(cors())
 app.use(cors(corsOptions))
@@ -23,6 +23,8 @@ app.use(express.json());
 app.get('/', (req, res) => {
     res.send("hello world");
 });
+
+//routes fyrir mismunandi endapunkta
 
 app.use('/api/v1/users', userRoutes);
 

@@ -1,5 +1,7 @@
 const {Pool} = require('pg')
 
+// ný uppsetning krefst þess að breyta þessu! nema auðvitað að gagnagrunirinn á postgres sé sá sami!
+
 const pool = new Pool({
     host: 'localhost',
     user: 'postgres',
