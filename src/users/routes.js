@@ -1,7 +1,6 @@
 const {Router} = require('express');
 const controller = require('./controller');
 const router = Router();
-//router.get("/", () => controller.getUsers(req,res))
 router.get("/", controller.getUsers);
 router.get("/pending", controller.getPendingUsers)
 router.post("/", controller.addUser);
@@ -17,7 +16,7 @@ router.put("/paid/:id", controller.putUserPaid);
 
 
 
-
+//router.get("/", () => controller.getUsers(req,res))
 
 
 module.exports = router;
