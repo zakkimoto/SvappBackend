@@ -1,6 +1,9 @@
 const {Router} = require('express');
 const controller = require('./controller');
 const router = Router();
+
+//allir hlekkir á notendur
+
 router.get("/", controller.getUsers);
 router.get("/pending", controller.getPendingUsers)
 router.post("/", controller.addUser);

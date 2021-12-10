@@ -1,6 +1,8 @@
 const pool = require('../../databasepg');
 const queries = require('./queries');
 
+// ná í öll skilaboð
+
 const getMessages = (req, res) => {
     pool.query(queries.getMessages,(error,results)=>{
         if(!error){
@@ -12,6 +14,8 @@ const getMessages = (req, res) => {
     })
 };
 
+// ná í öll skilaboð sem eiga eftir að fá svar við
+
 const getActiveMessages = (req, res) => {
     pool.query(queries.getActiveMessages,(error,results)=>{
         if(!error){
@@ -22,6 +26,8 @@ const getActiveMessages = (req, res) => {
         }
     })
 };
+
+// ná í skilaboð með ID, þetta notum við í framendanum til þess að hafa "focus" skilaboð
 
 const getMessageById = (req,res)=>{
     const id = parseInt(req.params.id);
@@ -35,6 +41,7 @@ const getMessageById = (req,res)=>{
     })
 };
 
+// patch message sem þýðir að við bætum við svari hérna í gagnagruninn, og merkjum það sem ekki active
 
 const patchMessage = (req, res) => {
     const id = parseInt(req.params.id);

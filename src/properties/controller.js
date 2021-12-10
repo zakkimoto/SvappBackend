@@ -1,6 +1,7 @@
 const pool = require('../../databasepg');
 const queries = require('./queries');
 
+// ná í allar fasteignir, við notum þetta í feisteingaglugganum okkar
 
 const getProperties = (req, res) => {
     pool.query(queries.getProperties,(error,results)=>{
@@ -13,6 +14,8 @@ const getProperties = (req, res) => {
     })
 };
 
+//náum í addressu eftir ID
+
 const getAdressById = (req,res)=>{
     const id = parseInt(req.params.id);
     pool.query(queries.getAdressById,[id],(error,results)=>{
@@ -24,6 +27,8 @@ const getAdressById = (req,res)=>{
         }
     })
 };
+
+//ná í fasteign með addressu
 
 const getPropertiesWithAddress = (req, res) => {
     pool.query(queries.getPropertiesWithAddress,(error,results)=>{
